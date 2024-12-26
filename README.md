@@ -2,30 +2,28 @@ Movie Lobby API for OTT Applications
 This is a backend API for managing a movie lobby for OTT applications. The API allows users to list movies, search by title or genre, and add, update, or delete movies from the lobby. It is built using Node.js, TypeScript, MongoDB, and Express.
 
 Table of Contents
-    1.Prerequisites
-    2.Setup Instructions
-    3.API Documentation
-    4.Test Cases
-    5.Code Quality and Linting
+1.Prerequisites
+2.Setup Instructions
+3.API Documentation
+4.Test Cases
+5.Code Quality and Linting
 
 1.Prerequisites
 Before starting, ensure you have the following software installed:
-    Node.js: Download and install Node.js
-    MongoDB: Install MongoDB or use MongoDB Atlas (cloud database)
-    VS Code or any text editor of your choice
+Node.js: Download and install Node.js
+MongoDB: Install MongoDB or use MongoDB Atlas (cloud database)
+VS Code or any text editor of your choice
 
-Setup Instructions
-    1. Clone the Repository
-    If you don’t already have the project, clone it using git:
+Setup Instructions 1. Clone the Repository
+If you don’t already have the project, clone it using git:
 
-    Copy code
     git clone https://github.com/MrSharma050522/Dazn-Backend-Assignment
     cd Dazn-Backend-Assignment
 
     2. Install Dependencies
     Navigate to the project folder and install the required dependencies by running:
 
-    Copy code
+
     npm install
     This will install the required packages, including Express, Mongoose, and other dependencies.
 
@@ -34,20 +32,20 @@ Setup Instructions
     If you’re using local MongoDB, ensure the MongoDB server is running on mongodb://localhost:27017/movielobby.
     In your .env file, set the following environment variable:
 
-    Copy code
+
     MONGO_URI=mongodb://localhost:27017/movielobby
 
     4. Run the API
     To run the server locally, use the following command:
 
-    Copy code
+
     npm run build
     npm start
     This will start the API on http://localhost:3000.
 
     If you're using nodemon for auto-reloading during development, you can use:
 
-    Copy code
+
     npm run start
 
     API Documentation
@@ -139,12 +137,9 @@ Setup Instructions
 
     DELETE http://localhost:3000/movies/1
 
-Test Cases
-    1. Test Get Movies Endpoint
-    typescript
-    Copy code
-    import request from 'supertest';
-    import app from './app'; // Adjust based on your file structure
+Test Cases 1. Test Get Movies Endpoint
+import request from 'supertest';
+import app from './app'; // Adjust based on your file structure
 
     describe('GET /movies', () => {
     it('should return a list of movies', async () => {
@@ -154,8 +149,8 @@ Test Cases
     });
     });
     2. Test Search Movies Endpoint
-    typescript
-    Copy code
+
+
     describe('GET /search', () => {
     it('should return movies based on search query', async () => {
         const response = await request(app).get('/search?q=Sci-Fi');
@@ -164,8 +159,8 @@ Test Cases
     });
     });
     3. Test Post Movie Endpoint
-    typescript
-    Copy code
+
+
     describe('POST /movies', () => {
     it('should add a new movie', async () => {
         const movieData = {
@@ -186,8 +181,8 @@ Test Cases
     });
     });
     4. Test Put Movie Endpoint
-    typescript
-    Copy code
+
+
     describe('PUT /movies/:id', () => {
     it('should update an existing movie', async () => {
         const updatedData = {
@@ -207,8 +202,8 @@ Test Cases
     });
     });
     5. Test Delete Movie Endpoint
-    typescript
-    Copy code
+
+
     describe('DELETE /movies/:id', () => {
     it('should delete a movie', async () => {
         const response = await request(app)
@@ -223,17 +218,16 @@ Test Cases
     You can use ESLint to ensure code quality and maintainability.
 
     1. Install ESLint:
-    bash
-    Copy code
+
+
     npm install eslint --save-dev
     2. Set Up ESLint:
-    bash
-    Copy code
+
+
     npx eslint --init
     3. Run ESLint:
-    bash
-    Copy code
+
+
     npx eslint . --fix
     Conclusion
     You now have a complete API to manage a movie lobby. The setup steps include running the server, testing endpoints, and using test cases written in TypeScript with Jest. You can use this API to manage movies with features like adding, updating, searching, and deleting movies, as well as role-based access control for admins.
-
